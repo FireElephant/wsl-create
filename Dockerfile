@@ -82,6 +82,7 @@ $VSC_SERVER --install-extension humao.rest-client
 $VSC_SERVER --install-extension alefragnani.Bookmarks
 $VSC_SERVER --install-extension ms-vscode.live-server
 $VSC_SERVER --install-extension EditorConfig.EditorConfig
+$VSC_SERVER --install-extension donjayamanne.githistory
 
 EOT
 
