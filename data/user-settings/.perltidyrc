@@ -1,0 +1,88 @@
+# RECOMMENDED
+# Format by PBP (Perl Best Practices book)
+--perl-best-practices
+
+# RECOMMENDED
+# Do not send the result to standard output (otherwise it will be impossible to run perltidy with a list of files, for example in tests)
+# pbp itself defines --standard-output, we reset it
+--nostandard-output
+
+# RECOMMENDED
+# Do the final result right away (restarting won't change anything).
+# With this option, formatting will be slower, but it will not be so that after
+# the first formatting run, the second run will make changes.
+--converge
+
+# RECOMMENDED
+# Margins for qw lists are better visible. It is recommended to include in the documentation from perltidy (see the section for pbp).
+# It is not included in pbp only because it appeared later than the publication of pbp parameters
+--extended-continuation-indentation
+
+# RECOMMENDED
+# The default length is 80, in pbp 78. This is from the days of small screens. Now it is written in the perltidy documentation
+# that many people make a limit of 120 characters. I think this is reasonable and I will also do 120
+--maximum-line-length=120
+
+# PERSONAL PREFERENCES
+# Do not make a "protrusion" for LABELS.
+# With a flag "-nola"
+# {
+#     my $i;
+#     LOOP: while ( $i = <FOTOS> ) {
+#         chomp($i);
+#         next unless $i;
+#         fixit($i);
+#     }
+# }
+# Without a flag "-nola"
+# {
+#     my $i;
+# LOOP: while ( $i = <FOTOS> ) {
+#         chomp($i);
+#         next unless $i;
+#         fixit($i);
+#     }
+# }
+-nola
+
+# PERSONAL PREFERENCES
+# Do not expand the lists into one line if there is a manually inserted line feed after the comma.
+# By default, as in pbp, this is not the case, but usually if the list is formatted, then this is done
+# for a reason and automatically straightening it into one line may be a bad idea that degrades the readability of the code.
+# With a flag "--break-at-old-comma-breakpoints":
+# my @list = (
+#     'A616516', 'A664656', 'A8498', 'A9495',  'A455656',
+#     'B238787', 'B2387',   'B8383', 'B99988', 'B121212',
+#     'C238787', 'C2387',   'C8383', 'C99988', 'C121212',
+# );
+# Without a flag "--break-at-old-comma-breakpoints":
+# my @list = (
+#     'A616516', 'A664656', 'A8498',   'A9495', 'A455656', 'B238787', 'B2387', 'B8383',
+#     'B99988',  'B121212', 'C238787', 'C2387', 'C8383',   'C99988',  'C121212',
+# );
+--break-at-old-comma-breakpoints
+
+# PERSONAL PREFERENCES
+# This default setting in perltidy (formatting recommendations from Larry) is 0,
+# but bpb overrides it by 2. I like the original version better.
+# With a flag "--vertical-tightness=2" (pbp)
+# test(
+#     {   a => 1,
+#         b => 2,
+#     },
+#     {   c => 3,
+#         d => 4,
+#     }
+# );
+# With a flag "--vertical-tightness=0" (default)
+# test(
+#     {
+#         a => 1,
+#         b => 2,
+#     },
+#     {
+#         c => 3,
+#         d => 4,
+#     }
+# );
+--vertical-tightness=0

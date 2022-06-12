@@ -1,0 +1,4 @@
+{
+    "perl.perltidyrc": "~/.perltidyrc",
+    "perl.perlcritic.enabled": false
+}

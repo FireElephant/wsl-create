@@ -101,3 +101,6 @@ cat >~/.gitignore <<EOF
 EOF
 
 EOT
+
+COPY --chown=${USER} data/user-settings/settings.json /home/${USER}/.vscode-server/data/Machine/settings.json
+COPY --chown=${USER} data/user-settings/.perltidyrc /home/${USER}/.perltidyrc
