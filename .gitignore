@@ -1,0 +1,4 @@
+data/tar-builds/*
+data/wsl/*
+.pls_cache/*
+!.gitkeep
