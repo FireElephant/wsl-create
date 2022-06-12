@@ -48,7 +48,7 @@
 
     - wsl-perl-dev - The name of the new WSL environment
     - \data\wsl - Catalog with a file system for WSL
-    - wsl-perl-dev.tar - File created in step 7
+    - wsl-perl-dev.tar - File created in step 5
 
 ## Notes:
  - Check the list of WSL environment: `wsl --list`
